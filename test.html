@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Контрольные вопросы</title>
+</head>
+<body>
+	<div class="header">
+		<h1 class="title">Контрольные вопросы</h1>
+			<nav class="menu_list">
+				<a href="home.html">Главная</a>
+				<a href="par1.html">Ethernet со скоростью 10 Мбит/с на разделяемой среде</a>
+				<a href="par2.html">Беспроводные локальные сети IEEE 802.11</a>
+				<a href="par3.html">Персональные сети и технология Bluetooth</a>				
+				<a href="test.html">Проверка знаний</a>
+			</nav>
+	</div> <!-- /.header -->
+	<div class="main_test">
+		<form name="test" >
+		1.Выберите утверждения, корректно описывающие особенности метода доступа технологии Ethernet:  <img src="m0.jpg" align=middle name="r1" width="20" height="20"><br> 
+		<input type="radio" name="v1" value="0" onclick=""> узел обязан «прослушивать» разделяемую среду; <br>
+		<input type="radio" name="v1" value="1" onclick="">узел может передать свой кадр в разделяемую среду в любой момент времени независимо от того, занята среда или нет; <br>
+		<input type="radio" name="v1" value="0" onclick="">узел ожидает подтверждения приема переданного кадра от узла назначения в течение некоторого времени, а в случае истечения этого времени повторяет передачу <br>
+		<br>
+		2. Чем объясняется, что минимальный размер поля данных кадра Ethernet выбран равным 46 байт? Варианты ответов:  <img src="m0.jpg" align=middle name="r2" width="20" height="20"><br>
+		<input type="radio" name="v2" value="1 ñòîðîíàìè" onclick="">для предотвращения монопольного захвата среды узлом; <br> 
+		<input type="radio" name="v2" value="0" onclick=""> для устойчивого распознавания коллизий; <br>
+		<input type="radio" name="v2" value="0" onclick=""> для сокращения накладных расходов. <br>
+		<br>
+
+		3. К какому типу относится МAC-адрес 01:80:С2:00:00:08? Варианты ответов:  <img src="m0.jpg" align=middle name="r3" width="20" height="20"><br>
+		<input type="radio" name="v3" value="1" onclick="">групповой<br>
+		<input type="radio" name="v3" value="0" onclick="">индивидуальный<br>
+		<input type="radio" name="v3" value="0" onclick="">локальный<br>
+		<br>
+
+		 4. Как скорость передачи данных технологии Ethernet на разделяемой среде влияет на максимальный диаметр сети? Варианты ответов:  <img src="m0.jpg" align=middle name="r4" width="20" height="20"><br>
+		<input type="radio" name="v4" value="0" onclick=""> чем выше скорость передачи, тем меньше максимальный диаметр сети;<br>
+		<input type="radio" name="v4" value="1" onclick="">чем выше скорость передачи, тем больше максимальный диаметр сети; <br>
+		<input type="radio" name="v4" value="0" onclick=""> не влияет. <br>
+		<br>
+		5.  К чему приводит наличие скрытого терминала в сети IEEE 802.11? Варианты ответов:  <img src="m0.jpg" align=middle name="r5" width="20" height="20"><br>
+		<input type="radio" name="v5" value="0" onclick="">к нарушению связности сети; <br>
+		<input type="radio" name="v5" value="0" onclick=""> к повышению уровня помех в радиосреде;<br>
+		<input type="radio" name="v5" value="1" onclick="">к более частому возникновению коллизий.<br>
+		<br>
+		<input type="button" name="ok" value="OK" onclick="f()">
+		<input type="reset" name="otch" value="очистить" >
+		<br>
+		</form>
+	</div>
+	<script>
+		function f(){
+			f1=false
+			f2=false
+			f3=false
+			f4=false
+			f5=false
+			for (i=0;i<3;i++){
+				if (document.test.v1[i].checked==true) f1=true
+				if (document.test.v2[i].checked==true) f2=true
+				if (document.test.v3[i].checked==true) f3=true
+				if (document.test.v4[i].checked==true) f4=true
+				if (document.test.v5[i].checked==true) f5=true
+				} 
+		b=0
+
+		if (f1 && f2 && f3 && f4 && f5){
+if (document.test.v1.value=="1") {b+=1; document.r1.src="m1.jpg"}
+else {document.r1.src="m2.jpg"}
+if (document.test.v2.value=="1") {b+=1; document.r2.src="m1.jpg"}
+else {document.r2.src="m2.jpg"}
+if (document.test.v3.value=="1") {b+=1; document.r3.src="m1.jpg"}
+else {document.r3.src="m2.jpg"}
+if (document.test.v4.value=="1") {b+=1; document.r4.src="m1.jpg"}
+else{document.r4.src="m2.jpg"}
+if (document.test.v5.value=="1") {b+=1; document.r5.src="m1.jpg"}
+else {document.r5.src="m1.jpg"}
+if (b<3) {alert("Оценка: 2  Правильных: "+b)}
+else {alert("Оценка:"+b +" Правильных:"+b)}
+}
+else {alert("Не отмечены все")}
+}
+
+function f1()
+{
+document.test.reset()
+}
+	</script>
+</body>
+</html>
